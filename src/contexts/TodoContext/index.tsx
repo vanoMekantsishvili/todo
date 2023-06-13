@@ -1,26 +1,7 @@
-import React, { FC, createContext, useState, ReactNode, useCallback, useMemo } from 'react';
-
-export interface TodoItem {
-  id: string;
-  text: string;
-  isCompleted: boolean;
-}
-
-export enum TodoFilter {
-  ALL = 'ALL',
-  ACTIVE = 'ACTIVE',
-  COMPLETED = 'COMPLETED',
-}
-
-interface TodoContextProps {
-  items: TodoItem[] | [];
-  activeFilter: TodoFilter;
-  addItem: (item: TodoItem) => void;
-  deleteItem: (itemId: string) => void;
-  editItem: (item: TodoItem) => void;
-  clearCompleted: () => void;
-  setActiveFilter: (activeFilter: TodoFilter) => void;
-}
+import React, { FC, createContext, useState, useCallback } from 'react';
+import { TodoItem } from './interfaces/todoItem.interface'
+import { TodoItemsProviderProps, TodoContextProps } from './props'
+import { TodoFilter } from './enums/todoFilter.enum'
 
 export const TodoContext = createContext<TodoContextProps>({
   items: [],
@@ -31,11 +12,6 @@ export const TodoContext = createContext<TodoContextProps>({
   clearCompleted: () => {},
   setActiveFilter: () => {},
 });
-
-
-interface TodoItemsProviderProps {
-  children: ReactNode;
-}
 
 export const TodoProvider: FC<TodoItemsProviderProps> = ({ children }) => {
   const [items, setItems] = useState<TodoItem[] | []>([]);

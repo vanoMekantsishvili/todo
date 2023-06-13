@@ -1,8 +1,9 @@
-import React, { FC, useContext, useState } from 'react'
+import React, { FC, useContext } from 'react'
 import classnames from 'classnames'
 import Button from '../../../components/Button'
-import { TodoContext, TodoFilter } from '../../../contexts/TodoContext'
+import { TodoContext } from '../../../contexts/TodoContext'
 import { FooterProps } from './props'
+import { TodoFilter } from '../../../contexts/TodoContext/enums/todoFilter.enum'
 import './styles.scss'
 
 const Footer: FC<FooterProps> = ({activeTasksAmount}) => {    

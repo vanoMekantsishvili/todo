@@ -1,11 +1,13 @@
-import React, { FC, useCallback, useContext, useState } from 'react'
+import React, { FC, useContext, useState } from 'react'
 import classnames from 'classnames';
 import Checkbox from '../../../components/Checkbox'
 import Input from '../../../components/Input'
 import Button from '../../../components/Button'
 import { ReactComponent as RemoveIcon } from "../../../assets/close.svg";
+import { ReactComponent as EditIcon } from "../../../assets/edit-black.svg";
 import { ItemProps } from './props'
-import { TodoContext, TodoItem } from '../../../contexts/TodoContext'
+import { TodoContext } from '../../../contexts/TodoContext'
+import { TodoItem } from '../../../contexts/TodoContext/interfaces/todoItem.interface';
 import './styles.scss'
 
 const Item: FC<ItemProps> = ({item}) => {
@@ -46,14 +48,14 @@ const Item: FC<ItemProps> = ({item}) => {
                     isActionsVisible && 'item-wrapper__actions--visible'
                 )}>
                     <Button
-                        className='item-wrapper__delete'
+                        className='item-wrapper__action'
                         onClick={() => setIsEditModeEnabled(true)}>
-                        <RemoveIcon className='item-wrapper__delete-icon' stroke='#ffffff'/>
+                        <EditIcon className='item-wrapper__edit-icon'/>
                     </Button>
                     <Button
-                        className='item-wrapper__delete'
+                        className='item-wrapper__action'
                         onClick={() => deleteItem(item.id)}>
-                        <RemoveIcon className='item-wrapper__delete-icon' stroke='#ffffff'/>
+                        <RemoveIcon className='item-wrapper__delete-icon'/>
                     </Button>
                 </div> 
             </div>

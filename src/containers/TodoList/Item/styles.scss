@@ -12,7 +12,7 @@
         margin: 0 1rem 0 1rem;
     }
 
-    &__delete {
+    &__action {
         width: 2.4rem;
         height: 2.4rem;
         padding: 0;
@@ -23,6 +23,12 @@
         &:active,
         &:focus {
             border: none;
+        }
+    }
+
+    &__edit-icon {
+        * {
+            fill: #0088cc;
         }
     }
 

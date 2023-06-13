@@ -1,16 +1,14 @@
-import React, { FC, useCallback, useContext, useMemo } from 'react'
-import Input from '../../components/Input'
-import Button from '../../components/Button'
+import React, { FC, useContext, useMemo } from 'react'
 import Item from './Item'
 import AddItem from './AddItem'
-import { TodoContext, TodoFilter } from '../../contexts/TodoContext'
+import { TodoContext } from '../../contexts/TodoContext'
 import Footer from './Footer'
+import { TodoFilter } from '../../contexts/TodoContext/enums/todoFilter.enum'
 import './styles.scss'
 
 const TodoList: FC = () => {
     const { items, activeFilter } = useContext(TodoContext);
 
-    
     const filteredItems = useMemo(() => {
         switch(activeFilter) {
           case TodoFilter.ALL: 
@@ -68,7 +66,6 @@ const TodoList: FC = () => {
                         {emptyStateCopy}
                     </div>
                 )}
-                
             </div>
             
             <Footer activeTasksAmount={activeItemsAmount}/>
