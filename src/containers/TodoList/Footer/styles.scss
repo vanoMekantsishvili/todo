@@ -1,0 +1,24 @@
+.todo-list-footer {
+    height: 5rem;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__amount {
+        font-size: 1.4rem;
+    }
+
+    &__action {
+        font-size: 1.6rem;
+        display: flex;
+        flex-shrink: 0;
+        padding: 0.4rem;
+        background-color: white;
+        color: black;
+
+        &--active {
+            border: 0.1rem solid red;
+        }
+    }
+}

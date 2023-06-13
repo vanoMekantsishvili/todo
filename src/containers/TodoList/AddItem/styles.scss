@@ -1,0 +1,19 @@
+.add-item-wrapper {
+    display: flex;
+
+    &__input {
+        width: 100%;
+        height: 4rem;
+        padding: 0.8rem;
+        border: none;
+        font-size: 1.6rem;
+
+        &:focus {
+            border: none;
+        }
+    }
+
+    &__header {
+        display: flex;
+    }
+}
